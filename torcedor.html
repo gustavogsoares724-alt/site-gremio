@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Área do Torcedor - Grêmio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/gremiologo.jpg" alt="Escudo do Grêmio" width="60">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menu-principal" aria-controls="menu-principal"
+                        aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav ms-auto gap-md-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                    <li class="nav-item"><a class="nav-link" href="titulos.html">Títulos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="elenco.html">Elenco</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="torcedor.html" aria-current="page">Área do Torcedor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="loja.html">Loja</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+<main class="container my-4 my-md-5">
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+
+                <h1 class="mb-4">Área do Torcedor</h1>
+                <p class="lead">Faça seu cadastro e participe da Área do Torcedor do Grêmio.</p>
+
+                <form action="/salvar" method="POST" class="border rounded-3 p-4 p-md-5 shadow-sm">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome completo:</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required minlength="3" maxlength="80">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cidade" class="form-label">Cidade:</label>
+                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite sua cidade" required minlength="2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone:</label>
+                        <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000" required pattern="[0-9() -]{10,16}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nascimento" class="form-label">Data de nascimento:</label>
+                        <input type="date" class="form-control" id="nascimento" name="nascimento" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="estado" class="form-label">Estado:</label>
+                        <select class="form-select" id="estado" name="estado" required><option value="">Selecione seu estado</option><option value="RS">Rio Grande do Sul</option><option value="SC">Santa Catarina</option><option value="PR">Paraná</option><option value="SP">São Paulo</option><option value="RJ">Rio de Janeiro</option><option value="MG">Minas Gerais</option><option value="outro">Outro</option></select>
+                    </div>
+                    <fieldset class="mb-3">
+                        <legend class="form-label fs-6 fw-bold">Você acompanha o Grêmio?</legend>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="acompanha" id="acompanha-sim" value="sim" required>
+                            <label class="form-check-label" for="acompanha-sim">Sim</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="acompanha" id="acompanha-nao" value="nao">
+                            <label class="form-check-label" for="acompanha-nao">Não</label>
+                        </div>
+                    </fieldset>
+                    <div class="mb-3">
+                        <label for="posicao" class="form-label">Qual setor do time você mais gosta?</label>
+                        <select class="form-select" id="posicao" name="posicao" required><option value="">Selecione</option><option value="goleiro">Goleiro</option><option value="defesa">Defesa</option><option value="meio">Meio-campo</option><option value="ataque">Ataque</option></select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="comentario" class="form-label">Deixe seu comentário:</label>
+                        <textarea class="form-control" id="comentario" name="comentario" rows="5" maxlength="300" placeholder="Escreva aqui..."></textarea>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" name="novidades" id="novidades">
+                        <label class="form-check-label" for="novidades">Quero receber novidades do Grêmio.</label>
+                    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" name="termos" id="termos" required>
+                        <label class="form-check-label" for="termos">Aceito participar da Área do Torcedor.</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2">Cadastrar</button>
+                </form>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p class="fw-bold fs-5">Grêmio FBPA</p>
+        <div class="footer-links d-flex flex-wrap justify-content-center gap-2 gap-md-4">
+            <p>Contato</p>
+            <p>Redes Sociais</p>
+            <p>Patrocinadores</p>
+            <p>Cadastre-se</p>
+            <p>Acessibilidade</p>
+        </div>
+        <p class="mb-0">© 2026 Grêmio FBPA</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
